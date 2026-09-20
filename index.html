@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>House of Snappe — Catalogue</title>
+<meta name="description" content="House of Snappe — Modern. Traditional. You.">
+<style>
+:root{--cream:#F3EEE3;--pebble:#C9C4B8;--stone:#8C8B82;--olive:#737C5A;--bark:#40342C;--line:#d8d0c2}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--bark);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}button{cursor:pointer}
+.announce{background:var(--bark);color:var(--cream);text-align:center;padding:9px;font-size:10px;letter-spacing:2px}
+header{position:sticky;top:0;z-index:20;background:rgba(243,238,227,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:16px 5%;display:flex;align-items:center;gap:28px}
+.logo{font:26px Georgia,serif;letter-spacing:1px;white-space:nowrap}.logo img{height:42px;width:auto;display:none}
+nav{display:flex;gap:25px;margin:auto;font-size:11px;letter-spacing:1.5px}nav button{border:0;background:none;color:var(--bark)}
+.actions{display:flex;gap:12px}.icon{border:0;background:none;font-size:18px}
+main{padding-bottom:60px}.intro{padding:75px 5% 35px;text-align:center}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--olive)}h1{font:400 clamp(44px,6vw,76px)/.95 Georgia,serif;margin:12px 0 18px}.intro p{max-width:570px;margin:auto;line-height:1.7;font-size:14px;color:#625a51}
+.toolbar{padding:0 5% 28px;display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid var(--line)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:transparent;border:1px solid var(--line);padding:10px 14px;font-size:10px;letter-spacing:1.2px;color:var(--bark)}.filter.active,.filter:hover{background:var(--bark);color:var(--cream);border-color:var(--bark)}
+.controls{display:flex;gap:10px}.search{border:1px solid var(--line);background:transparent;padding:10px 12px;width:210px;outline:none}.sort{border:1px solid var(--line);background:transparent;padding:10px;font-size:11px;color:var(--bark)}
+.grid{padding:35px 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:28px 16px}.card{position:relative;min-width:0}.photo{aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(145deg,#d6d0c4,#87867d);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;letter-spacing:2px}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(40,35,30,.16));opacity:0;transition:.35s}.card:hover .photo:after{opacity:1}.placeholder{transition:transform .5s}.card:hover .placeholder{transform:scale(1.03)}.heart{position:absolute;z-index:2;right:10px;top:10px;border:0;background:rgba(243,238,227,.9);width:34px;height:34px;font-size:17px}.heart.active{background:var(--bark);color:var(--cream)}
+.info{padding:13px 2px}.category{font-size:9px;letter-spacing:1.5px;color:var(--stone);text-transform:uppercase}.name{font:19px Georgia,serif;margin-top:6px}.price{font-size:12px;margin-top:6px}.view{margin-top:12px;border:0;border-bottom:1px solid var(--bark);background:none;padding:0 0 4px;font-size:10px;letter-spacing:1.4px;color:var(--bark)}
+.empty{grid-column:1/-1;text-align:center;padding:80px 0;color:var(--stone)}
+footer{background:var(--bark);color:var(--cream);padding:42px 5%;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footerbrand{font:26px Georgia,serif}.footerlinks{display:flex;gap:22px;font-size:11px}.footerlinks a{color:var(--cream);text-decoration:none}
+.modal{display:none;position:fixed;inset:0;background:rgba(40,34,29,.55);z-index:50;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.panel{background:var(--cream);max-width:760px;width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative}.panel-photo{min-height:500px;background:linear-gradient(145deg,#d6d0c4,#87867d);display:flex;align-items:center;justify-content:center;color:white;font-size:9px;letter-spacing:2px}.panel-info{padding:42px}.close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:24px;color:var(--bark)}.panel h2{font:400 38px Georgia,serif;margin:10px 0}.panel p{line-height:1.7;color:#625a51;font-size:13px}.wa{display:inline-block;background:var(--olive);color:var(--cream);border:0;padding:14px 20px;letter-spacing:1.4px;font-size:10px;margin-top:15px;text-decoration:none}
+@media(max-width:900px){nav{display:none}.grid{grid-template-columns:repeat(3,1fr)}.toolbar{align-items:flex-start;flex-direction:column}.controls{width:100%}.search{flex:1}}
+@media(max-width:620px){header{padding:13px 4%;justify-content:space-between}.logo{font-size:19px}.grid{grid-template-columns:repeat(2,1fr);padding:24px 4%;gap:24px 10px}.intro{padding:55px 4% 28px}.toolbar{padding:0 4% 20px}.filters{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:4px}.filter{white-space:nowrap}.controls{display:grid;grid-template-columns:1fr 130px}.search{width:100%}.name{font-size:16px}.panel{grid-template-columns:1fr;max-height:90vh;overflow:auto}.panel-photo{min-height:280px}.panel-info{padding:25px}.footerlinks{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="announce">FREE SHIPPING ACROSS INDIA · HOUSE OF SNAPPE</div>
+<header>
+  <div class="logo">HOUSE OF SNAPPE</div>
+  <nav>
+    <button onclick="setGender('all')">ALL</button>
+    <button onclick="setGender('men')">MEN</button>
+    <button onclick="setGender('women')">WOMEN</button>
+    <button onclick="setCategory('new')">NEW ARRIVALS</button>
+  </nav>
+  <div class="actions"><button class="icon" onclick="focusSearch()" aria-label="Search">⌕</button><button class="icon" onclick="showWishlist()">♡</button><button class="icon" onclick="showCart()">🛍</button></div>
+</header>
+
+<main>
+<section class="intro">
+  <div class="eyebrow">THE HOUSE EDIT</div>
+  <h1>Modern. Traditional. You.</h1>
+  <p>Curated fashion for every side of you — contemporary essentials for him and timeless Indian style for her.</p>
+</section>
+
+<section class="toolbar">
+  <div class="filters">
+    <button class="filter active" data-cat="all">ALL</button>
+    <button class="filter" data-cat="T-Shirts">T-SHIRTS</button>
+    <button class="filter" data-cat="Hoodies">HOODIES</button>
+    <button class="filter" data-cat="Sweatshirts">SWEATSHIRTS</button>
+    <button class="filter" data-cat="Sarees">SAREES</button>
+    <button class="filter" data-cat="Kurtas">KURTAS</button>
+    <button class="filter" data-cat="Ornaments">ORNAMENTS</button>
+  </div>
+  <div class="controls">
+    <input id="search" class="search" placeholder="Search the collection…" oninput="render()">
+    <select id="sort" class="sort" onchange="render()">
+      <option value="featured">Sort: Featured</option>
+      <option value="low">Price: Low to High</option>
+      <option value="high">Price: High to Low</option>
+      <option value="az">Name: A–Z</option>
+    </select>
+  </div>
+</section>
+
+<section id="grid" class="grid"></section>
+</main>
+
+<footer>
+  <div><div class="footerbrand">HOUSE OF SNAPPE</div><div style="font-size:11px;margin-top:8px;color:#c9c0b7">Modern. Traditional. You.</div></div>
+  <div class="footerlinks"><a href="#">Instagram</a><a href="#">WhatsApp</a><a href="#">Contact</a><a href="#">Shipping</a><a href="#">Returns</a></div>
+</footer>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="panel">
+    <button class="close" onclick="closeModal()">×</button>
+    <div id="modalPhoto" class="panel-photo">PLACEHOLDER IMAGE</div>
+    <div class="panel-info"><div id="modalCat" class="category"></div><h2 id="modalName"></h2><div id="modalPrice" class="price"></div><p id="modalDesc"></p><div id="modalSizes" style="font-size:11px;letter-spacing:1px;margin-top:20px"></div><a class="wa" href="#" id="wa">ORDER VIA WHATSAPP</a></div>
+  </div>
+</div>
+
+<script>
+const products=[
+{id:1,name:"Essential Oversized Tee",cat:"T-Shirts",gender:"men",price:799,desc:"A relaxed everyday essential with a clean contemporary silhouette.",sizes:"S · M · L · XL · XXL"},
+{id:2,name:"Urban Form Tee",cat:"T-Shirts",gender:"men",price:849,desc:"Minimal streetwear energy designed for effortless everyday styling.",sizes:"S · M · L · XL · XXL"},
+{id:3,name:"Everyday Heavyweight Tee",cat:"T-Shirts",gender:"men",price:899,desc:"A structured heavyweight tee with a premium everyday feel.",sizes:"S · M · L · XL · XXL"},
+{id:4,name:"Signature Pullover Hoodie",cat:"Hoodies",gender:"men",price:1499,desc:"A relaxed layer designed for cool evenings and easy styling.",sizes:"S · M · L · XL · XXL"},
+{id:5,name:"Essential Fleece Hoodie",cat:"Hoodies",gender:"men",price:1599,desc:"Soft, comfortable and built for repeat wear.",sizes:"S · M · L · XL · XXL"},
+{id:6,name:"Heritage Hoodie",cat:"Hoodies",gender:"men",price:1699,desc:"A premium casual layer with understated character.",sizes:"S · M · L · XL · XXL"},
+{id:7,name:"Classic Crew Sweatshirt",cat:"Sweatshirts",gender:"men",price:1299,desc:"A clean crewneck for everyday wardrobes.",sizes:"S · M · L · XL · XXL"},
+{id:8,name:"Everyday Sweatshirt",cat:"Sweatshirts",gender:"men",price:1399,desc:"Relaxed comfort with a polished contemporary finish.",sizes:"S · M · L · XL · XXL"},
+{id:9,name:"Heavyweight Signature Sweatshirt",cat:"Sweatshirts",gender:"men",price:1499,desc:"A substantial sweatshirt made for a premium casual look.",sizes:"S · M · L · XL · XXL"},
+{id:10,name:"Ivory Handloom Saree",cat:"Sarees",gender:"women",price:2199,desc:"An elegant ivory saree inspired by timeless Indian simplicity.",sizes:"Free Size"},
+{id:11,name:"Olive Textured Saree",cat:"Sarees",gender:"women",price:1899,desc:"Earthy olive tones with a contemporary textured finish.",sizes:"Free Size"},
+{id:12,name:"Heritage Draped Saree",cat:"Sarees",gender:"women",price:2499,desc:"A refined drape designed for festive and special occasions.",sizes:"Free Size"},
+{id:13,name:"Everyday Cotton Kurta",cat:"Kurtas",gender:"women",price:899,desc:"A comfortable everyday kurta with an understated silhouette.",sizes:"S · M · L · XL · XXL"},
+{id:14,name:"Contemporary Straight Kurta",cat:"Kurtas",gender:"women",price:999,desc:"Clean lines and effortless styling for modern Indian wardrobes.",sizes:"S · M · L · XL · XXL"},
+{id:15,name:"Handcrafted Kurta Set",cat:"Kurtas",gender:"women",price:1499,desc:"A polished kurta set with an elevated handcrafted feel.",sizes:"S · M · L · XL · XXL"},
+{id:16,name:"Heritage Pearl Ornament Set",cat:"Ornaments",gender:"women",price:799,desc:"A graceful statement set for festive and occasion styling.",sizes:"One Size"},
+{id:17,name:"Temple-Inspired Ornament Set",cat:"Ornaments",gender:"women",price:899,desc:"Indian-inspired ornament styling with a contemporary finish.",sizes:"One Size"},
+{id:18,name:"Minimal Gold-Tone Ornament Set",cat:"Ornaments",gender:"women",price:699,desc:"Minimal, versatile jewellery designed for everyday elegance.",sizes:"One Size"}
+];
+let category="all", gender="all", wishlist=JSON.parse(localStorage.getItem("hsWishlist")||"[]");
+
+function setCategory(c){category=c;gender="all";document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.cat===c||c==="new"&&b.dataset.cat==="all"));render();window.scrollTo({top:250,behavior:"smooth"})}
+function setGender(g){gender=g;category="all";document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.cat==="all"));render();window.scrollTo({top:250,behavior:"smooth"})}
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>setCategory(b.dataset.cat));
+
+function render(){
+ const q=document.getElementById("search").value.toLowerCase().trim(), s=document.getElementById("sort").value;
+ let list=products.filter(p=>(category==="all"||category==="new"&&p.id<=18||p.cat===category)&&(gender==="all"||p.gender===gender)&&(p.name+" "+p.cat).toLowerCase().includes(q));
+ if(s==="low")list.sort((a,b)=>a.price-b.price); if(s==="high")list.sort((a,b)=>b.price-a.price); if(s==="az")list.sort((a,b)=>a.name.localeCompare(b.name));
+ const grid=document.getElementById("grid");
+ if(!list.length){grid.innerHTML='<div class="empty">No pieces found. Try another search.</div>';return}
+ grid.innerHTML=list.map(p=>`<article class="card">
+   <div class="photo"><button class="heart ${wishlist.includes(p.id)?"active":""}" onclick="toggleWish(${p.id});event.stopPropagation()">♡</button><div class="placeholder">EDITORIAL PLACEHOLDER</div></div>
+   <div class="info"><div class="category">${p.gender} · ${p.cat}</div><div class="name">${p.name}</div><div class="price">₹${p.price.toLocaleString("en-IN")}</div><button class="view" onclick="openProduct(${p.id})">VIEW PRODUCT →</button></div>
+ </article>`).join("");
+}
+function toggleWish(id){wishlist=wishlist.includes(id)?wishlist.filter(x=>x!==id):[...wishlist,id];localStorage.setItem("hsWishlist",JSON.stringify(wishlist));render()}
+function showWishlist(){alert("Wishlist: "+wishlist.length+" item(s). Your wishlist is saved on this device.")}
+function showCart(){alert("Cart is ready for the next build step.")}
+function focusSearch(){document.getElementById("search").focus();window.scrollTo({top:250,behavior:"smooth"})}
+function openProduct(id){const p=products.find(x=>x.id===id);document.getElementById("modalCat").textContent=p.gender+" · "+p.cat;document.getElementById("modalName").textContent=p.name;document.getElementById("modalPrice").textContent="₹"+p.price.toLocaleString("en-IN");document.getElementById("modalDesc").textContent=p.desc;document.getElementById("modalSizes").textContent="AVAILABLE: "+p.sizes;document.getElementById("wa").href="https://wa.me/?text="+encodeURIComponent("Hi House of Snappe, I want to order: "+p.name+" — ₹"+p.price);document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+render();
+</script>
+</body>
+</html>
